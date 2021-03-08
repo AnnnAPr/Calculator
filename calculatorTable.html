@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: lightskyblue;
+      }
+
+      .button {
+        background: linear-gradient(to bottom, #67a2f5, #0665e8);
+        border-radius: 4px;
+        border: 1px solid black;
+        cursor: pointer;
+        color: #ffffff;
+        font-family: "Times New Roman";
+        font-size: 30px;
+        height: 50px;
+        width: 80px;
+        padding: 0px;
+    }
+
+
+
+      .button:hover {
+        background:linear-gradient(to bottom, #656ff1 5%, #051392 100%);
+        background-color: rgb(40, 100, 230);        
+    }
+
+    form>input{
+        height: 40px;
+        width: 329px;
+        border-radius: 4px;
+        border: none;
+        margin-left: 500px;
+        font-size: 30px;
+    }
+    
+    table{
+        margin-left:500px;
+    }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div>
+
+      <form name = "form">
+        <input name = "screen">
+      </form>
+          <table>
+            <!-- <tr>
+              <td><input type = "button" class = "button" value = "Clear" onClick="c()"></td>
+            </tr> -->
+
+            <tr>
+              <td><input type = "button" class = "button" value = "7" onclick="textScreen(7)"></td>
+              <td><input type = "button" class = "button" value = "8" onclick="textScreen(8)"></td>
+              <td><input type = "button" class = "button" value = "9" onclick="textScreen(9)"></td>
+              <td><input type = "button" class = "button" value = "/" onclick="textScreen('/')"></td>
+
+            </tr>
+
+            <tr>
+              <td><input type = "button" class = "button" value = "4" onclick="textScreen(4)"></td>
+              <td><input type = "button" class = "button" value = "5" onclick="textScreen(5)"></td>
+              <td><input type = "button" class = "button" value = "6" onclick="textScreen(6)"></td>
+              <td><input type = "button" class = "button" value = "*" onclick="textScreen('*')"></td>
+
+            </tr>
+
+            <tr>
+              <td><input type = "button" class = "button" value = "1" onclick="textScreen(1)"></td>
+              <td><input type = "button" class = "button" value = "2" onclick="textScreen(2)"></td>
+              <td><input type = "button" class = "button" value = "3" onclick="textScreen(3)"></td>
+              <td><input type = "button" class = "button" value = "+" onclick="textScreen('+')"></td>
+
+            </tr>
+
+            <tr>
+              <td><input type = "button" class = "button" value = "0" onclick="textScreen(0)"></td>
+              <td><input type = "button" class = "button" value = "." onclick="textScreen('.')"></td>
+              <td><input type = "button" class = "button" value = "=" onclick="result('=')"></td>
+              <td><input type = "button" class = "button" value = "-" onclick="textScreen('-')"></td>
+
+            </tr>
+          </table>
+           
+          <table>
+            <tr>
+              <td><input style = "width: 329px;" type = "button" class = "button" value = "Clear" onClick="c()"></td>
+            </tr>
+          </table>
+
+    </div>
+
+    <script>
+        function textScreen(val) {
+            document.form.screen.value = document.form.screen.value+val;
+          }
+        function result() {
+            let exp = document.form.screen.value;          
+            if (exp){
+              document.form.screen.value = eval(exp);
+            }
+            else {
+              console.log("Something wrong.")
+            }
+          }
+        function c() {
+            document.form.screen.value = null;
+          }
+
+    
+    
+    </script>
+
+  </body>
+
+</html>
